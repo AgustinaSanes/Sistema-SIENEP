@@ -1,6 +1,8 @@
 package modelos.instancia;
 
 import modelos.recordatorio.Recordatorio;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,10 +14,10 @@ public class Incidencia extends Instancia{
 
     //Constructor
     public Incidencia(int id, boolean comConfidencial, String titulo, Date fechaHora, String comentario,
-                      List<Recordatorio> recordatorios, int idIncidencia, List<String> involucrados, String lugar){
-        super(id,comConfidencial,titulo,fechaHora,comentario,recordatorios);
+                      int idIncidencia, String lugar){
+        super(id,comConfidencial,titulo,fechaHora,comentario);
         this.idIncidencia=idIncidencia;
-        this.involucrados=involucrados;
+        this.involucrados=new ArrayList<>();
         this.lugar=lugar;
     }
 
@@ -25,6 +27,6 @@ public class Incidencia extends Instancia{
     public String getLugar(){return lugar;}
     //Setters
     public void setIdIncidencia(int idIncidencia){this.idIncidencia=idIncidencia;}
-    public void setInvolucrados(List<String> involucrados){this.involucrados=involucrados;}
     public void setLugar(String lugar){this.lugar=lugar;}
+    public void agregarInvolucrado(String involucrado){this.involucrados.add(involucrado);}
 }

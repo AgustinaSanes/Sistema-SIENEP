@@ -19,7 +19,6 @@ public class Recordatorio {
         this.tipo=tipo;
         this.frecuencia=frecuencia;
     }
-
     //Getters
     public int getId(){return id;}
     public String getTitulo(){return titulo;}

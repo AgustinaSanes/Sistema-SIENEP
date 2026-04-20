@@ -2,6 +2,7 @@ package modelos.instancia;
 import modelos.recordatorio.Recordatorio;
 import java.util.Date;
 import java.util.List;
+import java.util.ArrayList;
 
 public abstract class Instancia {
     protected int id;
@@ -10,15 +11,15 @@ public abstract class Instancia {
     protected Date fechaHora;
     protected String comentario;
     //Relaciones (1:N)
-    List<Recordatorio> recordatorios;
+    protected List<Recordatorio> recordatorios;
 
-    public Instancia(int id,boolean comConfidencial,String titulo, Date fechaHora,String comentario, List<Recordatorio> recordatorios){
+    public Instancia(int id,boolean comConfidencial,String titulo, Date fechaHora,String comentario){
         this.id=id;
         this.comConfidencial=comConfidencial;
         this.titulo=titulo;
         this.fechaHora=fechaHora;
         this.comentario=comentario;
-        this.recordatorios=recordatorios;
+        this.recordatorios=new ArrayList<>();
     }
     //Getters
     public int getId(){return id;}
@@ -33,5 +34,5 @@ public abstract class Instancia {
     public void setTitulo(String titulo){this.titulo=titulo;}
     public void setFechaHora(Date fechaHora){this.fechaHora=fechaHora;}
     public void setComentario(String comentario){this.comentario=comentario;}
-    public void setRecordatorios(List<Recordatorio> recordatorios){this.recordatorios=recordatorios;}
+    public void agregarRecordatorio(Recordatorio recordatorio){this.recordatorios.add(recordatorio);}
 }

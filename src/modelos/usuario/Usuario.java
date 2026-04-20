@@ -8,7 +8,8 @@ public abstract class Usuario {
     protected String email;
     protected String contrasena;
     protected boolean estado;
-    //Relaciones(N:1)
+
+    //Relacion(N:1)
     private Rol rol;
 
     //Constructor
@@ -28,7 +29,7 @@ public abstract class Usuario {
     public String getApellido(){return apellido;}
     public String getEmail(){return email;}
     public String getContrasena(){return contrasena;}
-    public boolean getEstado(){return estado;}
+    public boolean isEstado(){return estado;}
     public Rol getRol(){return rol;}
     //Setters
     public void setCedula(String cedula){this.cedula=cedula;}

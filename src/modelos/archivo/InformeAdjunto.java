@@ -11,7 +11,6 @@ public class InformeAdjunto {
     private boolean confidencial;
     //Relaciones(N:1)
     private Estudiante estudiante;
-    //hacer tmb constructor sin estudiante
     //Constructor
     public InformeAdjunto(int id,String nombre,String tipoArchivo,String rutaArchivo,String categoria,boolean confidencial,Estudiante estudiante){
         this.id=id;
@@ -28,7 +27,7 @@ public class InformeAdjunto {
     public String getTipoArchivo(){return tipoArchivo;}
     public String getRutaArchivo(){return rutaArchivo;}
     public String getCategoria(){return categoria;}
-    public boolean esConfidencial(){return confidencial;}
+    public boolean isConfidencial(){return confidencial;}
     public Estudiante getEstudiante(){return estudiante;}
     //Setters
     public void setId(int id){this.id=id;}
